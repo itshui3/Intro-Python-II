@@ -61,7 +61,6 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().n_to)
         except:
             print('No room to the north of player location')
-            continue
 
         continue
 
@@ -70,7 +69,6 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().e_to)
         except:
             print('No room to the north of player location')
-            continue
 
         continue
 
@@ -79,7 +77,6 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().s_to)
         except:
             print('No room to the north of player location')
-            continue
 
         continue
 
@@ -88,7 +85,6 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().w_to)
         except:
             print('No room to the north of player location')
-            continue
 
         continue
 
