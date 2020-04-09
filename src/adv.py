@@ -51,17 +51,36 @@ newPlayer = Player(playerName, room['outside'])
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+if(playerName == 'Admin'):
+    while True:
+        adminInput = input('Input Commands: ')
+
+        #Item Interface
+        if(adminInput == 'items'):
+            input('Item Interface: ')
+            continue
+        
+        #Quit config interface
+        if(adminInput == 'q' or adminInput == 'Q'):
+
+            cont = input('Done with admin configurations! Now try it out? [yes/no] ')
+
+            if(cont == 'yes'):
+                break
+            else:
+                quit()
+
 while True:
     print(newPlayer.getLocation())
     userInput = input('Input Action: ')
-    #movement interface
-    #I expect to move one adjustment relative to current position
+
+    #Movement interface
     if(userInput == 'n' or userInput == 'N'):
         try:
             newPlayer.setLocation(newPlayer.getLocation().n_to)
         except:
             print('No room to the north of player location')
-
         continue
 
     if(userInput == 'e' or userInput == 'E'):
@@ -69,7 +88,6 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().e_to)
         except:
             print('No room to the north of player location')
-
         continue
 
     if(userInput == 's' or userInput == 'S'):
@@ -77,7 +95,6 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().s_to)
         except:
             print('No room to the north of player location')
-
         continue
 
     if(userInput == 'w' or userInput == 'W'):
@@ -85,8 +102,8 @@ while True:
             newPlayer.setLocation(newPlayer.getLocation().w_to)
         except:
             print('No room to the north of player location')
-
         continue
+
 
     if(userInput == 'q' or userInput == 'Q'):
         print(userInput)
