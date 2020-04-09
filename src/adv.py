@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -36,8 +37,9 @@ room['treasure'].s_to = room['narrow']
 #
 # Main
 #
-
 # Make a new player object that is currently in the 'outside' room.
+playerName = input('Enter a player name: ')
+newPlayer = Player(playerName, room['outside'])
 
 # Write a loop that:
 #
@@ -49,3 +51,49 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+while True:
+    print(newPlayer.getLocation())
+    userInput = input('Input Action: ')
+    #movement interface
+    #I expect to move one adjustment relative to current position
+    if(userInput == 'n' or userInput == 'N'):
+        try:
+            newPlayer.setLocation(newPlayer.getLocation().n_to)
+        except:
+            print('No room to the north of player location')
+            continue
+
+        continue
+
+    if(userInput == 'e' or userInput == 'E'):
+        try:
+            newPlayer.setLocation(newPlayer.getLocation().e_to)
+        except:
+            print('No room to the north of player location')
+            continue
+
+        continue
+
+    if(userInput == 's' or userInput == 'S'):
+        try:
+            newPlayer.setLocation(newPlayer.getLocation().s_to)
+        except:
+            print('No room to the north of player location')
+            continue
+
+        continue
+
+    if(userInput == 'w' or userInput == 'W'):
+        try:
+            newPlayer.setLocation(newPlayer.getLocation().w_to)
+        except:
+            print('No room to the north of player location')
+            continue
+
+        continue
+
+    if(userInput == 'q' or userInput == 'Q'):
+        print(userInput)
+        break
+
+    #items interface
