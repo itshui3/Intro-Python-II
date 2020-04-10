@@ -1,5 +1,8 @@
 from room import Room
 from player import Player
+from item import Utility, Weapon, Armor
+from store import DrinkStation, Drink
+from monster import Monster
 
 # Declare all the rooms
 
@@ -24,6 +27,7 @@ earlier adventurers. The only exit is to the south."""),
 
 
 # Link rooms together
+# Linked-List <=
 
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
@@ -34,12 +38,26 @@ room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
 
+# Populate rooms with items
+items = {
+    "axe": Weapon('Axe', 'A rusty bladed axe, better than nothing...', 2),
+    "key": Utility('Silver Key', 'An ornate key, the hinges on the blade indicate a very specific use.')
+}
+
+enemies = {
+    "goblin": Monster('Goblin', 'A vicious looking green midget spots you. It looks hungry.', 6, 1)
+}
+
+room['outside'].addItem(items["axe"])
+
+room['foyer'].addEnemy(enemies["goblin"])
+
 #
 # Main
 #
 # Make a new player object that is currently in the 'outside' room.
 playerName = input('Enter a player name: ')
-newPlayer = Player(playerName, room['outside'])
+newPlayer = Player(playerName, room['outside'], 10)
 
 # Write a loop that:
 #
@@ -72,7 +90,21 @@ if(playerName == 'Admin'):
                 quit()
 
 while True:
-    print(newPlayer.getLocation())
+    # New location check surroundings logic
+    print('\n', newPlayer.getLocation())
+    for enemy in newPlayer.getNearbyEnemies():
+        print(enemy)
+        armed = False
+        for item in newPlayer.checkItems():
+            if(item["type"] == "Combat"):
+                armed = True
+        
+        if(armed == False):
+
+            print('You encounter a monster.. but you are not armed. So you die!')
+            exit()
+
+    # User Input Section Below
     userInput = input('Input Action: ')
 
     #Movement interface
@@ -110,3 +142,23 @@ while True:
         break
 
     #items interface
+
+    if(userInput == 'search'):
+        print('\nYou look around slowly scanning the dark interior of the room you are in...\n')
+        newPlayer.getLocation().returnItems()
+
+    if(userInput == 'inventory' or userInput == 'inv'):
+        print('\nYour inventory: \n')
+        for item in newPlayer.checkItems():
+            print(item)
+
+    if(' ' in userInput):
+
+        request = userInput.split(' ')[0]
+        target = userInput.split(' ')[1]
+
+        if(request == 'get' or request == 'GET'):
+            newPlayer.loot(target)
+
+        if(request == 'drop' or request == 'DROP'):
+            newPlayer.dropItem(target)
