@@ -20,7 +20,34 @@ Up to this point, you've gotten your feet wet by working on a bunch of small Pyt
 
 * Create the REPL command parser in `adv.py` which allows the player to move to rooms
   in the four cardinal directions.
+
+-> Running 'python ./src/adv.py' in terminal will start program allowing player to move to rooms in the four cardinal directions. 
+--1. Input needs to be stored as direction
+--2. Direction needs to be input into Player Object's movement method
+--2note. Movement method needs to adjust player object's current position dependent on movement relevant to current location
+
 * Fill out Player and Room classes in `player.py` and `room.py`
+
+-> Player
+Methods: 
+-- Movement(receive directional input, manipulate current location)
+-- Search Current Room(to print items based on current location)
+-- Get item 
+-- Drop item 
+
+Attributes:
+-   Current Location
+-   Items[]
+
+-> Room
+Methods:
+-- Display Items
+-- Lose Item
+-- Gain Item 
+
+Attributes: 
+-   Name
+-   Items[]
 
 ### Day 2 MVP
 
