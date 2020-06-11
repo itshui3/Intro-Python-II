@@ -1,0 +1,2 @@
+from mobs import Monster
+

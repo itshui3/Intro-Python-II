@@ -6,5 +6,8 @@ class Player():
         self.current_room = current_room
         self.job = job()
 
-    # def __repr__(self):
-    #     return 
+    def __repr__(self):
+        return '{' + f'name: {self.name}, current_room: {self.current_room}, job: {self.job}' + '}'
+
+    def __str__(self):
+        return f'Player: {self.name}\nCurrently in: {self.current_room}\nJob: {str(self.job)}'
