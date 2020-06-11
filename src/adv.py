@@ -35,7 +35,7 @@ room['treasure'].s_to = room['narrow']
 player = None
 
 while True:
-
+# Character Creation
     if player == None:
         name = input('Welcome to Adv Game, pick a name.\n')
         job = input(f'Great, {name}! Now pick a job. [Warrior, Thief, Mage]\n')
@@ -54,7 +54,7 @@ while True:
             continue
 # Game-Start
     print(f'{player.current_room}')
-    command = input('\nSelect a Command: [\'move\', \'attack\', \'search\']\n')
+    command = input('\nSelect a Command: [\'move\', \'attack\', \'search\', \'q\']\n')
 
     if command == 'move':
         # if monster exists, prevent movement
@@ -69,6 +69,10 @@ while True:
         else:
             print('No Room in that direction')
             continue
+
+    elif command == 'q':
+        print('Thanks for playing!')
+        break
 
     
 # Write a loop that:
