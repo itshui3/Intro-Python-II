@@ -1,6 +1,9 @@
 import os
+import sys
 
-mobs = os.path.abspath(os.path.abspath('.') + '/src/assets/entities/mobs.py')
+entities = os.path.abspath( os.path.dirname( __file__ ) + '/entities' )
+sys.path.insert( 0, entities )
+
 from mobs import Monster
 
 print(Monster)

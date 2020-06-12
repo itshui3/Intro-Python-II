@@ -1,3 +1,9 @@
+import os
+import sys
+
+assets = os.path.abspath( os.path.dirname( __file__ ) + '/assets' )
+sys.path.insert( 0, assets )
+
 from roomgen import room
 from player import Player
 from classes import Warrior, Thief, Mage
