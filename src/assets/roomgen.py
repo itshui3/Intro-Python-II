@@ -28,6 +28,12 @@ room['treasure'].s_to = room['narrow']
 
 from itemgen import weapons, armor, potions
 
+# put items in rooms
 # weapons['axe'] weapons['sword'] weapons['wand']
 # armor['breastplate'] armor['fullplate']
 # potions['redpotion'] potions['greenpotion'] potions['yellowpotion']
+
+from mobgen import monsters
+
+# put monsters in rooms
+# monsters['goblin'] monsters['slime']
