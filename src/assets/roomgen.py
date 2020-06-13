@@ -1,8 +1,7 @@
 import os
 import sys
 
-# sys.path.insert( 0, os.path.abspath( os.path.dirname( __file__ ) + '/entities' ) )
-# sys.path.insert( 0, os.path.abspath( os.path.dirname( __file__ ) + '/resources' ) )
+sys.path.insert( 0, os.path.abspath( os.path.dirname( __file__ ) + '/entities' ) )
 
 from room import Room
 
@@ -26,3 +25,9 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
+
+from itemgen import weapons, armor, potions
+
+# weapons['axe'] weapons['sword'] weapons['wand']
+# armor['breastplate'] armor['fullplate']
+# potions['redpotion'] potions['greenpotion'] potions['yellowpotion']

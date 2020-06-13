@@ -10,7 +10,7 @@ class Weapon(Item):
     def __init__(self, name, description, atk, job):
         super().__init__(name, description)
         self.atk = atk
-        self.job = job() 
+        self.job = job
         # if job matches player's job, special attack enabled
 
     def __repr__(self):

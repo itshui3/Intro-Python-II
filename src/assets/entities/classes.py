@@ -3,8 +3,10 @@ class Warrior():
         self.hp = hp
         self.atk = atk
 
-    def bash(self):
-        return self.atk * 1.4
+    def attack(self, weapon, target):
+        # calculate attack based on weapon, target, and class
+        # return a combat result interface with information that can get rendered back to repl
+        pass
 
     def __repr__(self):
         return '{' + f'hp: {self.hp}, atk: {self.atk}' + '}'
@@ -19,8 +21,10 @@ class Thief():
         self.hp = hp
         self.atk = atk
 
-    def doublestrike(self):
-        return self.atk * 2
+    def attack(self, weapon, target):
+        # calculate attack based on weapon, target, and class
+        # return a combat result interface with information that can get rendered back to repl
+        pass
 
     def __repr__(self):
         return '{' + f'hp: {self.hp}, atk: {self.atk}' + '}'
@@ -33,8 +37,10 @@ class Mage():
         self.hp = hp
         self.atk = atk
 
-    def firebolt(self):
-        return self.atk * 1.8
+    def attack(self, weapon, target):
+        # calculate attack based on weapon, target, and class
+        # return a combat result interface with information that can get rendered back to repl
+        pass
 
     def __repr__(self):
         return '{' + f'hp: {self.hp}, atk: {self.atk}' + '}'

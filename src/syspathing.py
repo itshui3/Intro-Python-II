@@ -7,7 +7,7 @@ def generate_pathing():
 
     os.path.abspath( os.path.dirname( __file__ ) + '/assets' ),
     os.path.abspath( os.path.dirname( __file__ ) + '/assets/entities' ),
-    os.path.abspath( os.path.dirname( __file__ ) + '/assets/resources' )
+    # os.path.abspath( os.path.dirname( __file__ ) + '/assets/resources' )
 
     ]
 
